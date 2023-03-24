@@ -6,10 +6,11 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="header">
+    <div>
+      <div>
         <h1>Little</h1>
         <!-- make post request to /user -->
+
         <form>
           <input type="text" id="name" placeholder="name" /><br />
           <input type="number" id="age" placeholder="age" /><br />
@@ -17,8 +18,8 @@
           <button>create user</button>
         </form>
 
-        <!--make button to go to user list-->
-        <a href="/user">user list</a>
+        <h3>User List!!!</h3>
+        <ul id="user-list"></ul>
       </div>
     </div>
 
@@ -39,6 +40,19 @@
           body: JSON.stringify(data),
         }).then((res) => alert(res.status));
       });
+
+      const userList = document.querySelector('#user-list');
+      (() => {
+        fetch('/user')
+          .then((res) => res.json())
+          .then((data) => {
+            for (const user of data) {
+              const li = document.createElement('li', { id: `user${user.id}` });
+              li.innerHTML = `name : ${user.name}, age : ${user.age}`;
+              userList.appendChild(li);
+            }
+          });
+      })();
     </script>
   </body>
 </html>

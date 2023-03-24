@@ -1,14 +1,4 @@
-import {
-  IsAlpha,
-  IsAlphanumeric,
-  IsNumber,
-  IsString,
-  IsStrongPassword,
-  Max,
-  MaxLength,
-  Min,
-  MinLength,
-} from 'class-validator';
+import { IsNumber, IsString, Max, MaxLength, Min } from 'class-validator';
 
 export class CreateUserDto {
   @IsString()
@@ -21,7 +11,6 @@ export class CreateUserDto {
   age: number;
 
   //@IsStrongPassword()
-
   @IsString()
   @MaxLength(20)
   password: string;

@@ -12,16 +12,22 @@ export class UserService {
     private usersRepository: Repository<User>,
   ) {}
 
-  create(createUserDto: CreateUserDto): void {
-    this.usersRepository.insert(createUserDto);
+  create(createUserDto: CreateUserDto): Promise<number> {
+    return this.usersRepository
+      .insert(createUserDto)
+      .then((result): number => result.raw[0].id);
   }
 
   findAll(): Promise<User[]> {
     return this.usersRepository.find();
   }
 
-  findOne(id: number): Promise<User> {
+  findOneById(id: number): Promise<User> {
     return this.usersRepository.findOneBy({ id });
+  }
+
+  findOneByName(name: string): Promise<User> {
+    return this.usersRepository.findOneBy({ name });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
