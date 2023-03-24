@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Little Nest Application</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Little</h1>
+        <!-- make post request to /user -->
+        <form>
+          <input type="text" id="name" placeholder="name" /><br />
+          <input type="number" id="age" placeholder="age" /><br />
+          <input type="text" id="password" placeholder="password" /><br />
+          <button>create user</button>
+        </form>
+
+        <!--make button to go to user list-->
+        <a href="/user">user list</a>
+      </div>
+    </div>
+
+    <script>
+      //make post request to /user
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.querySelector('#name').value;
+        const age = +form.querySelector('#age').value;
+        const password = form.querySelector('#password').value;
+        const data = { name, age, password };
+        fetch('/user', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }).then((res) => alert(res.status));
+      });
+    </script>
+  </body>
+</html>
