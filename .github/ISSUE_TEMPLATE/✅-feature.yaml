@@ -2,13 +2,12 @@ name: "✅ Feature"
 description: "Feature 작업 사항을 입력해주세요."
 title: "[Feature]: "
 labels: "enhancement"
-assignees: ""
 body:
   - type: textarea
     id: description
     attributes:
       label: Description
-      description:
+      description: 
       placeholder: 이슈에 대한 설명
     validations:
       required: true
@@ -17,7 +16,7 @@ body:
     attributes:
       label: Todos
       description: Todo list 추가
-      value: "- [ ] todo1"
+      value: - [ ] todo1
     validations:
       required: true
   - type: textarea
