@@ -1,24 +1,22 @@
-name: "✅ Feature"
-description: "Feature 작업 사항을 입력해주세요."
-title: "[Feature]: "
-labels: "enhancement"
+name: "✅ Feature (frontend)"
+description: "Feature 작업 사항을 입력해주세요. (frontend)"
+title: "[Feature] "
+labels: ["enhancement", "frontend"]
 body:
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: 이슈에 대한 설명 
-      placeholder: 이슈에 대한 설명
+      description: 이슈에 대한 설명
+      value: "- 이슈에 대한 설명"
     validations:
       required: true
   - type: textarea
-    id: todos
+    id: todo
     attributes:
-      label: Todos
+      label: Todo
       description: Todo list 추가
       value: "- [ ] todo1"
-    validations:
-      required: true
   - type: textarea
     id: etc
     attributes:
