@@ -1,7 +1,7 @@
-name: "✨ Feature (backend)"
+name: "🔨 Refactoring (backend)"
 description: "Feature 작업 사항을 입력해주세요. (backend)"
-title: "[Feature] "
-labels: ["enhancement", "backend"]
+title: "[Refactoring] "
+labels: ["refactoring", "backend"]
 body:
   - type: textarea
     id: description
