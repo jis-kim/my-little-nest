@@ -7,7 +7,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: 
+      description: 이슈에 대한 설명 
       placeholder: 이슈에 대한 설명
     validations:
       required: true
