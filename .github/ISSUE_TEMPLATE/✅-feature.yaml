@@ -16,7 +16,7 @@ body:
     attributes:
       label: Todos
       description: Todo list 추가
-      value: - [ ] todo1
+      value: "- [ ] todo1"
     validations:
       required: true
   - type: textarea
